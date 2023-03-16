@@ -10,12 +10,12 @@ import java.util.*;
 
 public class TokenUtils {
 
-    private final static String ACCESS_TOKEN_SECRET = "";
+    private final static String ACCESS_TOKEN_SECRET = "24423F4528482B4D6251655468576D5A7134743777217A25432A46294A404E63";
     private final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 2_592_000L;
 
     public static  String createToken(String nombre, String email){
         long expirationTime = ACCESS_TOKEN_VALIDITY_SECONDS * 1_000;
-        Date expirationDate = new Date(System.currentTimeMillis() * expirationTime);
+        Date expirationDate = new Date(System.currentTimeMillis() + expirationTime);
 
         Map<String, Object> extra = new HashMap<>();
         extra.put("nombre",nombre);

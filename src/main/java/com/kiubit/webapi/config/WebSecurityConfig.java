@@ -1,5 +1,7 @@
-package com.kiubit.webapi.security;
+package com.kiubit.webapi.config;
 
+import com.kiubit.webapi.security.JWTAuthenticationFilter;
+import com.kiubit.webapi.security.JWTAuthorizationFilter;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,12 +31,15 @@ public class WebSecurityConfig {
         jwtAuthenticationFilter.setAuthenticationManager(authManager);
         jwtAuthenticationFilter.setFilterProcessesUrl("/login");
 
-        return http.csrf().disable()
+        return http
+                .cors()
+                .and()
+                .csrf().disable()
                 .authorizeHttpRequests()
+                //.requestMatchers("/api/**")
+                //.permitAll()
                 .anyRequest()
                 .authenticated()
-                .and()
-                .httpBasic()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
