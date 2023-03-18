@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.itandapps.dhlembarques.config;
+package com.kiubit.webapi.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -16,7 +16,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+
 /**
  *
  * @author Jose Daniel
