@@ -36,7 +36,7 @@ public class WebSecurityConfig {
                 .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/**")
+                .requestMatchers("/swagger-ui/**","/swagger-ui.html","/v3/api-docs/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -73,5 +73,5 @@ public class WebSecurityConfig {
     PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
+    
 }
